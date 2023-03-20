@@ -19,10 +19,10 @@ function List() {
                     <h2>{t.title}</h2>
                   </div>
                   <div className="col-2">
-                    <div>{t.height}m</div>
+                    <div>{t.height} m</div>
                   </div>
                   <div className="col-2">
-                    <div>{t.type}</div>
+                    <i>{t.type}</i>
                   </div>
                   <div className="col-2">
                     <button type="button" className="btn btn-primary">

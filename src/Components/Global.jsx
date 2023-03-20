@@ -1,26 +1,19 @@
 import { createContext, useEffect } from "react";
 import { useReadTrees } from "../Use/useReadTrees";
+import { useWriteTrees } from "../Use/useWriteTrees";
 
 const types = [
-  {
-    type: 1,
-    typeTitle: "Leaf tree",
-  },
-  {
-    type: 2,
-    typeTitle: "Spike tree",
-  },
-  {
-    type: 3,
-    typeTitle: "Palm Tree",
-  },
+  { type: 1, typeTitle: "Leaf Tree" },
+  { type: 1, typeTitle: "Spike Tree" },
+  { type: 3, typeTitle: "Palm Tree" },
 ];
+
 export const Global = createContext();
 
 export const GlobalProvider = ({ children }) => {
   const [trees, updateTrees] = useReadTrees();
   const [treeResponse, setCreateTree, setEditTree, setDeleteTree] =
-    useReadTrees();
+    useWriteTrees();
 
   useEffect(() => {
     updateTrees(Date.now());
@@ -32,8 +25,6 @@ export const GlobalProvider = ({ children }) => {
         trees,
         types,
         setCreateTree,
-        setEditTree,
-        setDeleteTree,
       }}
     >
       {children}

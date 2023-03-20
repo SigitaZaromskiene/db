@@ -22,7 +22,9 @@ function Create() {
 
   return (
     <div className="card mt-4">
-      <h2 className="card-header">Please plant new tree</h2>
+      <div className="card-header">
+        <h2>Please plant new tree</h2>
+      </div>
       <div className="card-body">
         <div className="mb-3">
           <label className="form-label">Tree</label>
@@ -33,42 +35,36 @@ function Create() {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-
         <div className="mb-3">
-          <label className="form-label">Slide to height: {height / 100}</label>
+          <label className="form-label">
+            Slide to height: {height / 100} m
+          </label>
           <input
             type="range"
             min="0"
             max="9999"
-            className="form-control"
+            className="form-range"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
           />
         </div>
-
         <div className="mb-3">
-          <label className="form-label">Slide to height: {height / 100}</label>
-          <input
-            type="range"
-            min="0"
-            max="9999"
-            className="form-control"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-          />
-        </div>
-        {/* 
-        <div className="mb-3">
-          <label className="form-label">Type</label>
-          <input
-            type="text"
-            className="form-control"
+          <label className="form-label">Tree type</label>
+          <select
+            className="form-select"
             value={type}
-            onChange={(e) => setTypee.target.value)}
-          />
-        </div> */}
+            onChange={(e) => setType(e.target.value)}
+          >
+            {types.map((t) => (
+              <option key={t.type} value={t.type}>
+                {t.typeTitle}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <button className="btn btn-primary" onClick={add}>
-          Add
+          PLANT
         </button>
       </div>
     </div>

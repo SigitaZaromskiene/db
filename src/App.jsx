@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import Create from "./Components/Create";
 import { GlobalProvider } from "./Components/Global";
 import List from "./Components/List";
 import "./style/app.scss";
@@ -9,7 +10,9 @@ function App() {
       <>
         <div className="container">
           <div className="row">
-            <div className="col-5">CREATE</div>
+            <div className="col-5">
+              <Create />
+            </div>
             <div className="col-7">
               <List />
             </div>
@@ -19,5 +22,4 @@ function App() {
     </GlobalProvider>
   );
 }
-
 export default App;
