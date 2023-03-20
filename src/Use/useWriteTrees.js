@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-const URL = "http://localhost:3003/numbers";
+const URL = "http://localhost:3003/trees";
 
-export const useWrite = (_) => {
+export const useWriteTrees = (_) => {
   const [response, setResponse] = useState(null);
   const [create, setCreate] = useState(null);
   const [destroy, setDelete] = useState(null);
